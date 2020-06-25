@@ -1,0 +1,23 @@
+---
+- hosts: localhost
+  gather_facts: no
+  vars:
+    ami_id: "ami-04e59c05167ea7bd5"
+  module_defaults:
+    group/aws:
+      region: "us-west-1"
+  tasks:
+    - name: Module 5 instance
+      ec2:
+        key_name: auburnec2
+        group: Module5-developer-sg
+        instance_type: t2.micro
+        image: "{{ ami_id }}"
+        instance_tags:
+          Name: Module 5
+          Module: 5
+        wait: yes
+        vpc_subnet_id: "{{ public_subnet.subnet.id }}"
+        exact_count: 1
+        count_tag:
+          Name: Module 5
