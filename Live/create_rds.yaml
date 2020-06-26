@@ -3,24 +3,24 @@
   gather_facts: no
   tasks:
     - name: create RDS subnet group
-        rds_subnet_group:
-          name: m5-rds-sng
-          description: private subnet group for m5 rds
-          subnets:
-            - "{{ private_subnet1.subnet.id }}"
-            - "{{ private_subnet2.subnet.id }}"
-          state: present
-          register: rds_sng
+      rds_subnet_group:
+        name: m5-rds-sng
+        description: private subnet group for m5 rds
+        subnets:
+          - "{{ private_subnet1.subnet.id }}"
+          - "{{ private_subnet2.subnet.id }}"
+        state: present
+        register: rds_sng
     - rds:
-        command: create
-        instance_name: m5-rds
-        db_engine: postgres
-        region: us-west-1
-        subnet: "{{ vpc.vpc.id }}"
-        vpc_security_groups: m5_sg_postgres
-        size: 10
-        instance_type: db.t2.micro
-        username: postgres
-        password: postgres
-        tags:
-          Module: 5
+      command: create
+      instance_name: m5-rds
+      db_engine: postgres
+      region: us-west-1
+      subnet: "{{ vpc.vpc.id }}"
+      vpc_security_groups: m5_sg_postgres
+      size: 10
+      instance_type: db.t2.micro
+      username: postgres
+      password: postgres
+      tags:
+        Module: 5
