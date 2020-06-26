@@ -6,6 +6,7 @@
         command: create
         instance_name: m5-rds
         db_engine: postgres
+        region: us-west-1
         subnet:
           - "{{ private_subnet1.subnet.id }}"
           - "{{ private_subnet2.subnet.id }}"
