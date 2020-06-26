@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: 
   become: yes
   tasks:
     - name: Install emacs-nox
