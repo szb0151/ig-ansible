@@ -10,7 +10,7 @@
     - name: Module 5.1
       ec2:
         key_name: auburnec2
-        group: Module5-developer-sg
+        #group:
         instance_type: t2.micro
         image: "{{ ami_id }}"
         instance_tags:
@@ -25,7 +25,7 @@
     - name: Module 5.2
       ec2:
         key_name: auburnec2
-        group: Module5-developer-sg
+        #group:
         instance_type: t2.micro
         image: "{{ ami_id }}"
         instance_tags:

@@ -50,7 +50,7 @@
       ec2_vpc_route_table:
         vpc_id: "{{ vpc.vpc.id }}"
         tags:
-          Name: Module5
+          Name: Module5 public
         subnets:
           - "{{ public_subnet.subnet.id }}"
         routes:
@@ -60,7 +60,7 @@
       ec2_vpc_route_table:
         vpc_id: "{{ vpc.vpc.id }}"
         tags:
-          Name: Module5
+          Name: Module5 private
         subnets:
           - "{{ private_subnet1.subnet.id }}"
           - "{{ private_subnet2.subnet.id }}"
