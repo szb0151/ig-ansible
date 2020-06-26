@@ -19,7 +19,7 @@
         wait: yes
         vpc_subnet_id: "{{ public_subnet.subnet.id }}"
         security_groups:
-          group_name: m5-ig-postgres
+          group_id: m5-sg-postgres
         assign_public_ip: yes
         exact_count: 1
         count_tag:
@@ -36,7 +36,7 @@
         wait: yes
         vpc_subnet_id: "{{ public_subnet.subnet.id }}"
         security_groups:
-          group_name: m5-ig-postgres
+          group_id: m5-sg-postgres
         assign_public_ip: yes
         exact_count: 1
         count_tag:
