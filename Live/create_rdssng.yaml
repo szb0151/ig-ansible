@@ -2,11 +2,11 @@
   gather_facts: no
   tasks:
     - name: create RDS subnet group
-        rds_subnet_group:
-          name: m5-rds-sng
-          description: private subnet group for m5 rds
-          subnets:
-            - "{{ private_subnet1.subnet.id }}"
-            - "{{ private_subnet2.subnet.id }}"
-          state: present
-        register: rds_sng
+      rds_subnet_group:
+        name: m5-rds-sng
+        description: private subnet group for m5 rds
+        subnets:
+          - "{{ private_subnet1.subnet.id }}"
+          - "{{ private_subnet2.subnet.id }}"
+        state: present
+      register: rds_sng
