@@ -7,7 +7,7 @@
         instance_name: m5-rds
         db_engine: postgres
         region: us-west-1
-        subnet: "{{ rds_sng.subnet_group.id }}"
+        subnet: m5-rds-sng
         vpc_security_groups: m5_sg_postgres
         size: 10
         instance_type: db.t2.micro
