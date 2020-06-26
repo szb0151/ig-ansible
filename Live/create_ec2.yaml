@@ -9,7 +9,7 @@
   tasks:
     - name: Module 5.1
       ec2:
-        key_name: auburnec2
+        key_name: cpsc4973
         #group:
         instance_type: t2.micro
         image: "{{ ami_id }}"
@@ -24,7 +24,7 @@
           Name: Module 5.1
     - name: Module 5.2
       ec2:
-        key_name: auburnec2
+        key_name: cpsc4973
         #group:
         instance_type: t2.micro
         image: "{{ ami_id }}"
