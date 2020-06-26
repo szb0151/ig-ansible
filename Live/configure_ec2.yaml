@@ -1,0 +1,11 @@
+---
+- hosts: tag_Module_5
+  user: ec2-user
+  become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+  tasks:
+    - name: Install emacs
+      package:
+        name: emacs-nox
+        state: present

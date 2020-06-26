@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install emacs-nox
+      package:
+        name: emacs-nox
+        state: present
+        update_cache: yes
+    - name: Install nano
+      package:
+        name: nano
+        state: present
+    - name: Install apache
+      package:
+        name: httpd
+        state: present
+    - name: Start apache
+      service:
+        name: httpd
+        state: started
+        enabled: true
