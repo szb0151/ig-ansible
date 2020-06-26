@@ -32,7 +32,7 @@
         vpc_id: "{{ vpc.vpc.id }}"
         name: M5 private ACL
         region: us-west-1
-        subnets: [ "{{ private_subnet1_subnet.subnet.id }}, {{ private_subnet2_subnet.subnet.id }}" ]
+        subnets: [ "{{ private_subnet1.subnet.id }}, {{ private_subnet2.subnet.id }}" ]
         tags:
           Module: 5
         ingress:
