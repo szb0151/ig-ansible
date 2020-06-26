@@ -9,4 +9,4 @@
             - "{{ private_subnet1.subnet.id }}"
             - "{{ private_subnet2.subnet.id }}"
           state: present
-          register: rds_sng
+        register: rds_sng
