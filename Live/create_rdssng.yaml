@@ -8,5 +8,6 @@
         subnets:
           - "{{ private_subnet1.subnet.id }}"
           - "{{ private_subnet2.subnet.id }}"
+        region: us-west-1
         state: present
       register: rds_sng
