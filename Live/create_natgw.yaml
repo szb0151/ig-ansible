@@ -9,4 +9,4 @@
         wait: yes
         region: us-west-1
         if_exist_do_not_create: true
-    register: m5_nat_gateway
+      register: m5_nat_gateway
