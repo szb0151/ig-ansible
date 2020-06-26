@@ -9,10 +9,10 @@
         subnet:
           - "{{ private_subnet1.subnet.id }}"
           - "{{ private_subnet2.subnet.id }}"
+        vpc_security_groups: m5_sg_postgres
         size: 10
         instance_type: db.t2.micro
         username: postgres
         password: postgres
         tags:
           Module: 5
-        state: present
