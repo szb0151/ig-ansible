@@ -4,7 +4,6 @@
   tasks:
     - name: Create NAT gateway
       ec2_vpc_nat_gateway:
-        vpc_id: "{{ vpc.vpc.id }}"
         name: M5 NAT gateway
         state: present
         subnet_id: "{{ public_subnet.subnet.id }}"
