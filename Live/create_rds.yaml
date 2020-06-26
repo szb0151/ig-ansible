@@ -8,10 +8,15 @@
         db_engine: postgres
         region: us-west-1
         subnet: m5-rds-sng
-        security_groups: m5_sg_postgres
         size: 10
         instance_type: db.t2.micro
         username: postgres
         password: postgres
         tags:
           Module: 5
+    - local_action:
+       module: rds
+       command: modify
+       instance_name: m5-rds
+       region: us-west-1
+       vpc_security_groups: "{{ vpc.vpc.id }}"
