@@ -5,6 +5,7 @@
     - name: Create security group sg-postgres
       ec2_group:
         name: m5-sg-postgres
+        description: sg with all ports necessary
         vpc_id: "{{ vpc.vpc.id }}"
         region: us-west-1
         rules:
