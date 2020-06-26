@@ -21,5 +21,4 @@
        command: modify
        instance_name: m5-rds
        region: us-west-1
-       vpc_security_groups:
-         vpc_security_group_id: m5_sg_postgres
+       vpc_security_group_ids: m5_sg_postgres
