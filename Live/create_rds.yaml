@@ -10,15 +10,15 @@
         subnet: m5-rds-sng
         size: "10"
         instance_type: db.t2.micro
+        vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
         username: postgres
         password: postgres
         tags:
           Module: 5
         wait: yes
         wait_timeout: 900
-    - local_action:
-       module: rds
-       command: modify
-       instance_name: m5-rds
-       region: us-west-1
-       vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
+    # - local_action:
+    #    module: rds
+    #    command: modify
+    #    instance_name: m5-rds
+    #    region: us-west-1
