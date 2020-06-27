@@ -12,6 +12,8 @@
         vpc_id: "{{ vpc.vpc.id }}"
         state: present
     - elb_network_lb:
+        stickiness_type: source_ip
+        stickiness_enabled: no
         name: m5_elb
         type: network
         scheme: internet-facing
