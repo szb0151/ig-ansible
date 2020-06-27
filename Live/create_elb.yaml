@@ -7,7 +7,7 @@
         type: network
         scheme: internet-facing
         vpc_id: "{{ vpc.vpc.id }}"
-        subnets:
+        subnet_mappings:
           - subnet_id: "{{ public_subnet.subnet.id }}"
             allocation_id: eipassoc-0ccb86a67d23545f4
         listeners:
