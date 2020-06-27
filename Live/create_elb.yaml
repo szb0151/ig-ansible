@@ -11,6 +11,7 @@
         port: 80
         vpc_id: "{{ vpc.vpc.id }}"
         state: present
+      register: m5_tg
     - elb_network_lb:
         name: m5-elb
         scheme: internet-facing

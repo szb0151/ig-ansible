@@ -5,7 +5,8 @@
     - ec2_asg:
         name: m5-asg
         load_balancers: m5-elb
-        target_group_names: m5-tg
+        target_group_arns:
+          - "{{ m5_tg.target_group_arn }}"
         availability_zones: us-west-1
         launch_template:
             version: '12'
