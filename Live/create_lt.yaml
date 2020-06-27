@@ -7,6 +7,7 @@
         name: m5-lt
         image_id: "ami-04e59c05167ea7bd5"
         instance_type: t2.micro
+        key_name: cpsc4973
         iam_instance_profile: image-gallery-server-role
         network_interfaces:
           - device_index: 0
