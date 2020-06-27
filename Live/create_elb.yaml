@@ -18,8 +18,7 @@
           - SubnetId: "{{ public_subnet.subnet.id }}"
             AllocationId: eipassoc-0ccb86a67d23545f4
         listeners:
-          - Protocol: [ TCP, TLS ]
-            Port: 80
+          - Protocol: TLS
             Port: 443
             DefaultActions:
               - Type: forward
