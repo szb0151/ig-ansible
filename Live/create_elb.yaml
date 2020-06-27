@@ -8,19 +8,19 @@
         scheme: internet-facing
         vpc_id: "{{ vpc.vpc.id }}"
         subnet_mappings:
-          - subnet_id: "{{ public_subnet.subnet.id }}"
-            allocation_id: eipassoc-0ccb86a67d23545f4
+          - SubnetId: "{{ public_subnet.subnet.id }}"
+            AllocationId: eipassoc-0ccb86a67d23545f4
         listeners:
           - protocol: TCP
             port: 80
             default_actions:
               - type: forward
-                target_group_name: m5-target-group
+                TargetGroupName: m5-target-group
           - protocol: TLS
             port: 443
             default_actions:
               - type: forward
-                target_group_name: m5-target-group
+                TargetGroupName: m5-target-group
           - certificates:
             certificate_arn: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
         tags:
