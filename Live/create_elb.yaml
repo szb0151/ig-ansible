@@ -16,7 +16,7 @@
         scheme: internet-facing
         subnet_mappings:
           - SubnetId: "{{ public_subnet.subnet.id }}"
-            AllocationId: eipalloc-00f2db57ae30c807a
+            # AllocationId: eipalloc-00f2db57ae30c807a
         listeners:
           - Protocol: TLS
             Port: 443
