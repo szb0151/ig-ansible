@@ -7,4 +7,5 @@
 - import_playbook: create_rdssng.yaml
 - import_playbook: create_rds.yaml
 - import_playbook: create_elb.yaml
+- import_playbook: create_lt.yaml
 - import_playbook: create_asg.yaml

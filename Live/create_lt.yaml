@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create Launch Template
+      ec2_launch_template:
+        name: m5-lt
+        image_id: "ami-04e59c05167ea7bd5"
+        instance_type: t2.micro
+        iam_instance_profile: image-gallery-server-role
+        network_interfaces:
+          - device_index: 0
+            associate_public_ip_address: yes
+            groups:
+              - "{{m5_sg_postgres.group_id}}"
+        user_data: "{{ lookup('file', './ec2-scripts/ec2-prod-bootstrap.sh') | b64encode }}"
+        state: present
+      register: ig_lt

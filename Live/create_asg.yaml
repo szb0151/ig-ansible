@@ -9,8 +9,7 @@
         availability_zones: us-west-1
         launch_template:
             version: '14'
-            launch_template_name: image-gallery-lt
-            launch_template_id: lt-0268f5db48d28da85
+            launch_template_name: m5-lt
         min_size: 2
         max_size: 4
         desired_capacity: 2
