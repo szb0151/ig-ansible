@@ -6,3 +6,4 @@
 - import_playbook: create_natgw.yaml
 - import_playbook: create_rdssng.yaml
 - import_playbook: create_rds.yaml
+- import_playbook: create_elb.yaml

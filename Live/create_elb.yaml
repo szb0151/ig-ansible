@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Create M5 ELB
+      elb_network_lb:
+      name: m5_elb
+      type: network
+      scheme: internet-facing
+      vpc_id: "{{ vpc.vpc.id }}"
+      subnets:
+        - "{{ public_subnet.subnet.id }}"
+      listeners:
+        - protocol: TCP
+          port: 80
+        - protocol: TLS
+          port: 443
+          default_actions:
+            - type: forward
+        - certificates:
+          certificate_arn: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
+      state: present
