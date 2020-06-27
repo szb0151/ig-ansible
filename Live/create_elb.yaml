@@ -21,12 +21,12 @@
           - Protocol: TCP
             Port: 80
             DefaultActions:
-              - type: forward
+              - Type: forward
                 TargetGroupName: m5-tg
           - Protocol: TLS
             Port: 443
             DefaultActions:
-              - type: forward
+              - Type: forward
                 TargetGroupName: m5-tg
           - Certificates: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
         validate_certs: yes
