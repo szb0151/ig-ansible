@@ -8,7 +8,7 @@
         target_group_arns: "{{ m5_tg.target_group_arn }}"
         availability_zones: us-west-1
         launch_template:
-            version: '13'
+            version: '14'
             launch_template_name: image-gallery-lt
             launch_template_id: lt-0268f5db48d28da85
         min_size: 2
