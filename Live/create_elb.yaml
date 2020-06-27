@@ -2,14 +2,14 @@
 - hosts: localhost
   gather_facts: no
   tasks:
-    - name: Create M5 ELB
-      elb_network_lb:
+    - elb_network_lb:
       name: m5_elb
       type: network
       scheme: internet-facing
       vpc_id: "{{ vpc.vpc.id }}"
       subnets:
-        - "{{ public_subnet.subnet.id }}"
+        - subnet_id: "{{ public_subnet.subnet.id }}"
+          allocation_id: eipassoc-0ccb86a67d23545f4
       listeners:
         - protocol: TCP
           port: 80
