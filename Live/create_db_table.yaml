@@ -2,18 +2,18 @@
 - hosts: localhost
   gather_facts: no
   tasks:
+    - name: Create image_gallery user
+        postgresql_query:
+          db: image_gallery
+          login_user: postgres
+          login_password: postgres
+          query: CREATE USER image_gallery LOGIN PASSWORD 'simple';
+    - name: Create users table if not exists
+        postgresql_query:
+          db: test_db
+          login_user: postgres
+          login_password: postgres
+          query: CREATE TABLE users IF NOT EXISTS ( username varchar(200) PRIMARY KEY, password varchar(200), full_name varchar(200));
     # pip: name=psycopg2
     # - name: Ensure the PostgreSQL service is running
     #     service: name=postgresql state=started enabled=yes
-    - name: Create image_gallery user
-      postgresql_query:
-        db: image_gallery
-        login_user: postgres
-        login_password: postgres
-        query: CREATE USER image_gallery LOGIN PASSWORD 'simple';
-    - name: Create users table if not exists
-      postgresql_query:
-        db: test_db
-        login_user: postgres
-        login_password: postgres
-        query: CREATE TABLE users IF NOT EXISTS ( username varchar(200) PRIMARY KEY, password varchar(200), full_name varchar(200));
