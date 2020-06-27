@@ -19,7 +19,8 @@
             AllocationId: eipassoc-0ccb86a67d23545f4
         listeners:
           - Protocol: [ TCP, TLS ]
-            Port: [ 80, 443 ]
+            Port: 80
+            Port: 443
             DefaultActions:
               - Type: forward
                 TargetGroupName: m5-tg
