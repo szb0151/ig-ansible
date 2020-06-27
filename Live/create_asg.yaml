@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - ec2_asg:
+      name: m5_asg
+      load_balancers: m5-elb
+      target_group_names: m5-tg
+      availability_zones: us-west-1
+      launch_template:
+          version: '12'
+          launch_template_name: image-gallery-lt
+          launch_template_id: lt-0268f5db48d28da85
+      min_size: 2
+      max_size: 4
+      desired_capacity: 2
+      vpc_zone_identifier: "{{ public_subnet.subnet.id }}"
+      tags:
+        Module: 5
