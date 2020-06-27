@@ -8,7 +8,6 @@
         target_group_arns: "{{ m5_tg.target_group_arn }}"
         availability_zones: us-west-1
         launch_template:
-            version: '14'
             launch_template_name: m5-lt
         min_size: 2
         max_size: 4
