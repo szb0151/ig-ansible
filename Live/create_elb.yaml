@@ -5,7 +5,7 @@
     - name: Create elb target group
       elb_target_group:
         stickiness_type: source_ip
-        stickiness_enable: no
+        stickiness_enabled: no
         name: m5-tg
         protocol: tcp
         port: 80
