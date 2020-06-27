@@ -12,7 +12,7 @@
         vpc_id: "{{ vpc.vpc.id }}"
         state: present
     - elb_network_lb:
-        name: m5_elb
+        name: m5-elb
         scheme: internet-facing
         subnet_mappings:
           - SubnetId: "{{ public_subnet.subnet.id }}"
@@ -24,7 +24,7 @@
               - Type: forward
                 TargetGroupName: m5-tg
             Certificates:
-              - CertificateArn: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
+              - CertificateArn: "arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84"
         tags:
           Module: 5
         state: present
