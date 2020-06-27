@@ -6,6 +6,7 @@
         command: create
         instance_name: m5-rds
         db_engine: postgres
+        db_instance_name: image_gallery
         region: us-west-1
         subnet: m5-rds-sng
         size: "10"
