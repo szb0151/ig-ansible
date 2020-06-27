@@ -18,17 +18,17 @@
           - SubnetId: "{{ public_subnet.subnet.id }}"
             AllocationId: eipassoc-0ccb86a67d23545f4
         listeners:
-          - protocol: TCP
-            port: 80
-            default_actions:
+          - Protocol: TCP
+            Port: 80
+            DefaultActions:
               - type: forward
                 TargetGroupName: m5-tg
-          - protocol: TLS
-            port: 443
-            default_actions:
+          - Protocol: TLS
+            Port: 443
+            DefaultActions:
               - type: forward
                 TargetGroupName: m5-tg
-          - certificates:
+          - Certificates:
             certificate_arn: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
         validate_certs: yes
         tags:
