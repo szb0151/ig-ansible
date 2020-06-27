@@ -3,12 +3,12 @@
   gather_facts: no
   tasks:
     - name: Create elb target group
-        elb_target_group:
-            name: m5-tg
-            protocol: tcp
-            port: 80
-            vpc_id: "{{ vpc.vpc.id }}"
-            state: present
+      elb_target_group:
+        name: m5-tg
+        protocol: tcp
+        port: 80
+        vpc_id: "{{ vpc.vpc.id }}"
+        state: present
     - elb_network_lb:
         name: m5_elb
         type: network
