@@ -3,33 +3,33 @@
   gather_facts: no
   tasks:
     - elb_target_group:
-      name: m5-tg
-      protocol: tcp
-      port: 80
-      vpc_id: "{{ vpc.vpc.id }}"
-      state: present
+        name: m5-tg
+        protocol: tcp
+        port: 80
+        vpc_id: "{{ vpc.vpc.id }}"
+        state: present
     - elb_network_lb:
-      name: m5_elb
-      type: network
-      scheme: internet-facing
-      vpc_id: "{{ vpc.vpc.id }}"
-      subnet_mappings:
-        - SubnetId: "{{ public_subnet.subnet.id }}"
-          AllocationId: eipassoc-0ccb86a67d23545f4
-      listeners:
-        - protocol: TCP
-          port: 80
-          default_actions:
-            - type: forward
-              TargetGroupName: m5-tg
-        - protocol: TLS
-          port: 443
-          default_actions:
-            - type: forward
-              TargetGroupName: m5-tg
-        - certificates:
-          certificate_arn: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
-      validate_certs: yes
-      tags:
-        Module: 5
-      state: present
+        name: m5_elb
+        type: network
+        scheme: internet-facing
+        vpc_id: "{{ vpc.vpc.id }}"
+        subnet_mappings:
+          - SubnetId: "{{ public_subnet.subnet.id }}"
+            AllocationId: eipassoc-0ccb86a67d23545f4
+        listeners:
+          - protocol: TCP
+            port: 80
+            default_actions:
+              - type: forward
+                TargetGroupName: m5-tg
+          - protocol: TLS
+            port: 443
+            default_actions:
+              - type: forward
+                TargetGroupName: m5-tg
+          - certificates:
+            certificate_arn: arn:aws:acm:us-west-1:059286676639:certificate/f34b001d-af0c-4b92-a198-0656a7958b84
+        validate_certs: yes
+        tags:
+          Module: 5
+        state: present
