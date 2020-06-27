@@ -9,4 +9,4 @@
 - import_playbook: create_elb.yaml
 - import_playbook: create_lt.yaml
 - import_playbook: create_asg.yaml
-# - import_playbook: create_db_table.yaml
+- import_playbook: create_db_table.yaml
