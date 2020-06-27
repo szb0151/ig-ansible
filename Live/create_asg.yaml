@@ -15,5 +15,3 @@
         max_size: 4
         desired_capacity: 2
         vpc_zone_identifier: "{{ public_subnet.subnet.id }}"
-        tags:
-          Module: 5
