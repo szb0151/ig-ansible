@@ -19,7 +19,8 @@
         wait: yes
         wait_timeout: 900
     - local_action:
-       command: restore
-       instance_name: m5-rds
-       region: us-west-1
-       snapshot: rds:image-gallery-2020-06-28-12-20
+      module: rds
+      command: restore
+      instance_name: m5-rds
+      region: us-west-1
+      snapshot: rds:image-gallery-2020-06-28-12-20
