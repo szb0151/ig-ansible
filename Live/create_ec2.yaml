@@ -18,7 +18,7 @@
           Module: 5
         wait: yes
         vpc_subnet_id: "{{ public_subnet.subnet.id }}"
-        user_data: "{{ lookup('file', './ec2-ans-devel/ec2-prod-ans-bootstrap.sh') | b64encode }}"
+        user_data: "{{ lookup('file', './ec2-ans-devel/ec2-prod-ans-bootstrap.sh') }}"
         assign_public_ip: yes
         exact_count: 1
         count_tag:
