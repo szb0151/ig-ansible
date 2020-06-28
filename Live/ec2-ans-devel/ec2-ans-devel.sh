@@ -3,14 +3,14 @@
 # Install packages
 yum -y update
 yum install -y gcc
-yum install python37
+yum install -y python37
 yum install -y python3-devel
 curl -O https://bootstrap.pypa.io/get-pip.py
-python3 get-pip.py --user
+python3 get-pip.py
 yum install -y postgresql-devel
 pip install boto3 --user
 pip install boto --user
-pip install ansible --user
+pip3 install ansible --user
 pip install psycopg2
 pip install psycopg2-binary --user
 yum install -y git
@@ -40,5 +40,6 @@ systemctl enable nginx
 su ec2-user -l -c 'cd ~/java-image-gallery && ./start' >/var/log/image_gallery.log 2>&1 &
 
 # Ansible commands
+export PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
 cd ig-ansible/Live/
 ansible-playbook create_all_devel.yaml
