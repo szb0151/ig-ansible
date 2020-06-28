@@ -26,5 +26,5 @@
       register: dev_ec2
     - name: Add dev ec2 host to hosts list
         add_host:
-          hostname: "{{ dev_ec2.hostname }}"
+          name: "{{ dev_ec2.name }}"
           groups: dev_ec2
