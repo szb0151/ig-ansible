@@ -10,8 +10,8 @@
         # db_name: m5_image_gallery
         region: us-west-1
         subnet: m5-rds-sng
-        size: "10"
-        instance_type: db.t2.micro
+        # size: "10"
+        # instance_type: db.t2.micro
         # vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
         # username: postgres
         # password: postgres
