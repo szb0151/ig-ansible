@@ -23,3 +23,9 @@
         exact_count: 1
         count_tag:
           Name: m5-ans-devel
+      register: dev_ec2
+    - name: Add dev ec2 host to hosts list
+      add_host:
+        name: "{{ dev_ec2.hostname }}"
+        groups: dev_ec2
+    # add host group

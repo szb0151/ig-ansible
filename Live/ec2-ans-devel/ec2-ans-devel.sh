@@ -40,6 +40,6 @@ systemctl enable nginx
 su ec2-user -l -c 'cd ~/java-image-gallery && ./start' >/var/log/image_gallery.log 2>&1 &
 
 # Ansible commands
-export PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
-cd ig-ansible/Live/
-ansible-playbook create_all_devel.yaml
+# export PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
+# cd ig-ansible/Live/
+# ansible-playbook create_all_devel.yaml
