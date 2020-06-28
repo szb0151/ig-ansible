@@ -18,7 +18,7 @@
           Module: 5
         wait: yes
         wait_timeout: 900
-      - local_action:
+    - local_action:
         module: rds
         command: restore
         instance_name: m5-rds
