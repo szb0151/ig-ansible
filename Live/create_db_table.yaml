@@ -3,10 +3,9 @@
   gather_facts: no
   tasks:
     - name: Create a new database with name "image_gallery"
-      become: yes
-      become_user: postgres
       postgresql_db:
         name: image_gallery
+        state: present
     - name: Create image_gallery user
       postgresql_query:
         db: image_gallery
