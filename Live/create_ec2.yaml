@@ -12,6 +12,7 @@
         key_name: cpsc4973
         group: m5_sg_postgres
         instance_type: t2.micro
+        instance_role: arn:aws:iam::059286676639:role/image-gallery-server-role
         image: "{{ ami_id }}"
         instance_tags:
           Name: m5-ans-devel
