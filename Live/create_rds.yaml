@@ -23,4 +23,5 @@
         command: restore
         instance_name: m5-rds
         region: us-west-1
+        subnet: ig-private-2-sn
         snapshot: rds:image-gallery-2020-06-28-12-20
