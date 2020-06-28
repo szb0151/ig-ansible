@@ -2,6 +2,9 @@
 - hosts: localhost
   gather_facts: no
   tasks:
+    - name: Create a new database with name "image_gallery"
+      postgresql_db:
+        name: image_gallery
     - name: Create image_gallery user
       postgresql_query:
         db: image_gallery
