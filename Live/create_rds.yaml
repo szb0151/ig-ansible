@@ -14,7 +14,7 @@
     - rds:
         command: restore
         snapshot: ig-ss-2
-        instance_name: m5-rds
+        instance_name: m5-rds-2
         # db_engine: postgres
         # db_name: m5_image_gallery
         region: us-west-1
@@ -31,6 +31,6 @@
     - local_action:
         module: rds
         command: modify
-        instance_name: m5-rds
+        instance_name: m5-rds-2
         region: us-west-1
         vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
