@@ -15,8 +15,8 @@
     - name: Create users table if not exists
       postgresql_query:
         db: image_gallery
-        login_user: "{{ lookup('aws_secret', 'sec-ig-image_gallery') }}"
-        login_password: simple
+        login_user: image_gallery
+        login_password: "{{ lookup('aws_secret', 'sec-ig-image_gallery') }}"
         query: CREATE TABLE users IF NOT EXISTS ( username varchar(200) PRIMARY KEY, password varchar(200), full_name varchar(200));
   # pip: name=psycopg2
     # - name: Ensure the PostgreSQL service is running

@@ -1,6 +1,15 @@
 ---
 - hosts: localhost
   gather_facts: no
+  # vars:
+  #   pg_secret: {
+  #      "username": "image_gallery",
+  #      "password": "simple",
+  #      "engine": "postgres",
+  #      "host": "{{ rds.instance.endpoint }}",
+  #      "port": 5432,
+  #      "dbInstanceIdentifier": "m5-rds",
+  #      }
   tasks:
     - rds:
         command: restore
