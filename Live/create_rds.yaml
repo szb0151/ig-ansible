@@ -33,3 +33,4 @@
         snapshot: ig-ss-2
         instance_name: m5-rds-3
         region: us-west-1
+        subnet: m5-rds-sng
