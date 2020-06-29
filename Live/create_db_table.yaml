@@ -1,5 +1,5 @@
 ---
-- hosts: m5-ans-devel
+- hosts: localhost
   gather_facts: no
   tasks:
     - name: Create a new database with name "m5_image_gallery"
