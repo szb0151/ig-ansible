@@ -13,16 +13,16 @@
   tasks:
     - rds:
         command: create
-        instance_name: m5-rds-2
+        instance_name: m5-rds-3
         db_engine: postgres
         db_name: m5_image_gallery
+        username: postgres
+        password: postgres
         region: us-west-1
         subnet: m5-rds-sng
         vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
         size: "20"
         instance_type: db.t2.micro
-        username: postgres
-        password: postgres
         tags:
           Module: 5
         wait: yes
@@ -31,5 +31,5 @@
         module: rds
         command: restore
         snapshot: ig-ss-2
-        instance_name: m5-rds-2
+        instance_name: m5-rds-3
         region: us-west-1
