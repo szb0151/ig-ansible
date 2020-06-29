@@ -1,5 +1,5 @@
 ---
-- hosts: dev_ec2
+- hosts: m5-ans-devel
   gather_facts: no
   tasks:
     - name: Create a new database with name "m5_image_gallery"
@@ -17,7 +17,7 @@
         db: m5_image_gallery
         login_user: image_gallery
         login_password: "{{ lookup('aws_secret', 'sec-ig-image_gallery') }}"
-        query: CREATE TABLE users IF NOT EXISTS ( username varchar(200) PRIMARY KEY, password varchar(200), full_name varchar(200));
+        query: CREATE TABLE users ( username varchar(200) PRIMARY KEY, password varchar(200), full_name varchar(200));
   # pip: name=psycopg2
     # - name: Ensure the PostgreSQL service is running
     #     service: name=postgresql state=started enabled=yes
