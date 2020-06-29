@@ -12,26 +12,24 @@
   #      }
   tasks:
     - rds:
-        command: restore
-        snapshot: ig-ss-2
+        command: create
         instance_name: m5-rds-2
-        state: present
-        # db_engine: postgres
-        # db_name: m5_image_gallery
+        db_engine: postgres
+        db_name: m5_image_gallery
         region: us-west-1
         subnet: m5-rds-sng
-        # size: "10"
-        # instance_type: db.t2.micro
-        # vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
-        # username: postgres
-        # password: postgres
+        size: "20"
+        instance_type: db.t2.micro
+        username: postgres
+        password: postgres
         tags:
           Module: 5
-        # wait: yes
-        # wait_timeout: 900
+        wait: yes
+        wait_timeout: 900
     - local_action:
         module: rds
-        command: modify
+        command: restore
+        snapshot: ig-ss-2
         instance_name: m5-rds-2
         region: us-west-1
         vpc_security_groups: "{{ m5_sg_postgres.group_id }}"
