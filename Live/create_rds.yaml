@@ -13,7 +13,7 @@
   tasks:
     - rds:
         command: restore
-        snapshot: ig-ss-1
+        snapshot: ig-ss-2
         instance_name: m5-rds
         # db_engine: postgres
         # db_name: m5_image_gallery
